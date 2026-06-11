@@ -10,8 +10,8 @@
 
 **Purpose**: Project initialization and basic structure for the EV Engine module.
 
-- [ ] T001 Create `src/model/optimizer.py`
-- [ ] T002 [P] Create `tests/model/test_optimizer.py`
+- [x] T001 Create `src/model/optimizer.py`
+- [x] T002 [P] Create `tests/model/test_optimizer.py`
 
 ---
 
@@ -21,7 +21,7 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete.
 
-- [ ] T003 Define `ProbabilityMatrix` handling logic and standard `PointRewardMatrix` constants/generators in `src/model/optimizer.py` based on `data-model.md`
+- [x] T003 Define `ProbabilityMatrix` handling logic and standard `PointRewardMatrix` constants/generators in `src/model/optimizer.py` based on `data-model.md`
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -37,14 +37,14 @@
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 
-- [ ] T004 [P] [US1] Integration test for matrix cross-multiplication EV calculation in `tests/model/test_optimizer.py`
-- [ ] T005 [P] [US1] Edge case test for exact EV ties resolving by single-outcome probability in `tests/model/test_optimizer.py`
+- [x] T004 [P] [US1] Integration test for matrix cross-multiplication EV calculation in `tests/model/test_optimizer.py`
+- [x] T005 [P] [US1] Edge case test for exact EV ties resolving by single-outcome probability in `tests/model/test_optimizer.py`
 
 ### Implementation for User Story 1
 
-- [ ] T006 [US1] Implement `calculate_best_ev` public contract in `src/model/optimizer.py` utilizing vectorized computations
-- [ ] T007 [US1] Add logic to dynamically size the point-reward matrix based on input matrix dimensions in `src/model/optimizer.py`
-- [ ] T008 [US1] Implement exact tie-breaking logic in `src/model/optimizer.py` preferring the highest baseline probability
+- [x] T006 [US1] Implement `calculate_best_ev` public contract in `src/model/optimizer.py` utilizing vectorized computations
+- [x] T007 [US1] Add logic to dynamically size the point-reward matrix based on input matrix dimensions in `src/model/optimizer.py`
+- [x] T008 [US1] Implement exact tie-breaking logic in `src/model/optimizer.py` preferring the highest baseline probability
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
@@ -54,9 +54,9 @@
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] T009 Refactor any complex broadcasting logic in `src/model/optimizer.py` for performance (<5ms target)
-- [ ] T010 [P] Ensure type hinting and docstrings align with `contracts/ev_engine.md` in `src/model/optimizer.py`
-- [ ] T011 Validate execution of `tests/model/test_optimizer.py`
+- [x] T009 Refactor any complex broadcasting logic in `src/model/optimizer.py` for performance (<5ms target)
+- [x] T010 [P] Ensure type hinting and docstrings align with `contracts/ev_engine.md` in `src/model/optimizer.py`
+- [x] T011 Validate execution of `tests/model/test_optimizer.py`
 
 ---
 
