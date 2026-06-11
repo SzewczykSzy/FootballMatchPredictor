@@ -54,3 +54,8 @@ ENV/
 *.db-shm
 *.db-wal
 *.sqlite
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/

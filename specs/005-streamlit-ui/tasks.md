@@ -15,9 +15,9 @@
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Create Streamlit entry point in `app.py`
-- [ ] T002 [P] Create UI components module in `src/ui/components.py`
-- [ ] T003 [P] Create UI test suite in `tests/ui/test_app.py`
+- [X] T001 Create Streamlit entry point in `app.py`
+- [X] T002 [P] Create UI components module in `src/ui/components.py`
+- [X] T003 [P] Create UI test suite in `tests/ui/test_app.py`
 
 ---
 
@@ -27,7 +27,7 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T004 Create backend integration functions/wrappers connecting `src/data/parser.py` and `src/model/optimizer.py` inside `src/ui/components.py`
+- [X] T004 Create backend integration functions/wrappers connecting `src/data/parser.py` and `src/model/optimizer.py` inside `src/ui/components.py`
 
 **Checkpoint**: Foundation ready - user story implementation can now begin
 
@@ -43,15 +43,15 @@
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 
-- [ ] T005 [P] [US1] Create Streamlit AppTest asserting Text Area existence and table rendering on submit in `tests/ui/test_app.py`
-- [ ] T006 [P] [US1] Create AppTest asserting error message appears on invalid input in `tests/ui/test_app.py`
+- [X] T005 [P] [US1] Create Streamlit AppTest asserting Text Area existence and table rendering on submit in `tests/ui/test_app.py`
+- [X] T006 [P] [US1] Create AppTest asserting error message appears on invalid input in `tests/ui/test_app.py`
 
 ### Implementation for User Story 1
 
-- [ ] T007 [P] [US1] Implement large Text Area input and "Generate Predictions" button in `app.py`
-- [ ] T008 [P] [US1] Implement parsing error handling and user-friendly error messages in `app.py`
-- [ ] T009 [US1] Implement table rendering logic formatting `PredictionOutputRow` data into a Markdown/HTML table in `src/ui/components.py`
-- [ ] T010 [US1] Wire the input text to the backend integration functions and pass the resulting data to the table renderer in `app.py`
+- [X] T007 [P] [US1] Implement large Text Area input and "Generate Predictions" button in `app.py`
+- [X] T008 [P] [US1] Implement parsing error handling and user-friendly error messages in `app.py`
+- [X] T009 [US1] Implement table rendering logic formatting `PredictionOutputRow` data into a Markdown/HTML table in `src/ui/components.py`
+- [X] T010 [US1] Wire the input text to the backend integration functions and pass the resulting data to the table renderer in `app.py`
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently via the browser.
 
@@ -61,8 +61,8 @@
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] T011 Validate execution via `streamlit run app.py` and ensure UI responsiveness (<3s)
-- [ ] T012 Run quickstart.md validation locally
+- [X] T011 Validate execution via `streamlit run app.py` and ensure UI responsiveness (<3s)
+- [X] T012 Run quickstart.md validation locally
 
 ---
 
