@@ -8,6 +8,12 @@
 
 **Input**: User description: "Create a 100% vectorized tournament simulator using NumPy and Pandas to address long-term tournament questions (Champion, Finalists, Group Winners). Fully map the official 2026 World Cup structure: 12 groups of 4 teams, top 2 teams + 8 best 3rd-placed teams advancing, followed by a knockout bracket starting from the Round of 32. Run 10,000 stochastic simulations per batch by sampling match outcomes from the Phase 2 Poisson distributions. Aggregate results to determine exact probabilities for long-term questions, including team goal-concentration indexes for top scorer predictions."
 
+## Clarifications
+
+### Session 2026-06-11
+- Q: Does this feature include creating a Streamlit UI page to visualize the simulation results, or should it focus exclusively on building the backend simulation engine and CLI tool for now? → A: Backend and CLI only (Defer Streamlit UI to a future feature)
+- Q: Should the aggregated simulation results (team probabilities, GCI) be permanently saved to the SQLite database, or computed on-the-fly and kept in memory? → A: Compute on-the-fly (In-memory only, re-run simulation when needed by CLI or future UI)
+
 ## User Scenarios & Testing *(mandatory)*
 
 ### User Story 1 - Group Stage Simulation (Priority: P1) 🎯 MVP
@@ -78,6 +84,8 @@ Users analyze the distribution of goals scored by each team to determine which t
 - **FR-006**: System MUST simulate the knockout bracket from the Round of 32, Round of 16, Quarter-finals, Semi-finals, to the Final, resolving draws stochastically according to a 50/50 coin flip representing a standard penalty shoot-out where team strengths are balanced.
 - **FR-007**: System MUST calculate and output the Goal Concentration Index (GCI) for each team stochastically, calculated using the Herfindahl-Hirschman Index (HHI) of goals scored across all matches played by a team in a simulation run (calculated as the sum of squared goals divided by the square of total goals scored).
 - **FR-008**: System MUST run entirely offline, loading team parameters and configs from the local SQLite database.
+- **FR-009**: System MUST expose the simulator via a CLI tool that outputs aggregated results to the console (Streamlit UI integration is explicitly out of scope for this feature branch).
+- **FR-010**: System MUST NOT persist the aggregated simulation results to the SQLite database; results must be computed on-the-fly and kept in memory during execution.
 
 ### Key Entities
 
