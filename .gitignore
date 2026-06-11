@@ -44,3 +44,6 @@ ENV/
 # Specify / Gemini CLI
 .gemini/
 .gemini/tmp/
+
+# Specify / AI / AGY
+.agents/

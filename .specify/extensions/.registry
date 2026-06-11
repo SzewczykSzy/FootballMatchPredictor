@@ -8,7 +8,14 @@
       "enabled": true,
       "priority": 10,
       "registered_commands": {
-        "gemini": [
+        "agy": [
+          "speckit.git.feature",
+          "speckit.git.validate",
+          "speckit.git.remote",
+          "speckit.git.initialize",
+          "speckit.git.commit"
+        ],
+        "codex": [
           "speckit.git.feature",
           "speckit.git.validate",
           "speckit.git.remote",
@@ -17,7 +24,7 @@
         ]
       },
       "registered_skills": [],
-      "installed_at": "2026-06-10T11:06:45.767206+00:00"
+      "installed_at": "2026-06-11T10:08:06.434921+00:00"
     },
     "agent-context": {
       "version": "1.0.0",
@@ -26,12 +33,15 @@
       "enabled": true,
       "priority": 10,
       "registered_commands": {
-        "gemini": [
+        "agy": [
+          "speckit.agent-context.update"
+        ],
+        "codex": [
           "speckit.agent-context.update"
         ]
       },
       "registered_skills": [],
-      "installed_at": "2026-06-10T11:06:45.974243+00:00"
+      "installed_at": "2026-06-11T10:08:06.642714+00:00"
     }
   }
 }
