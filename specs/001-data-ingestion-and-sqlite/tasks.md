@@ -9,8 +9,8 @@
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Create project structure (`src/data/` and `tests/data/`) per implementation plan
-- [ ] T002 [P] Initialize Python project and configure `pytest` environment
+- [X] T001 Create project structure (`src/data/` and `tests/data/`) per implementation plan
+- [X] T002 [P] Initialize Python project and configure `pytest` environment
 
 ---
 
@@ -20,7 +20,7 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T003 Setup SQLite database connection manager and schema initialization in `src/data/database.py` using `contracts/schema.sql`
+- [X] T003 Setup SQLite database connection manager and schema initialization in `src/data/database.py` using `contracts/schema.sql`
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -36,14 +36,14 @@
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 
-- [ ] T004 [P] [US1] Integration test for parsing raw odds text in `tests/data/test_ingestion.py`
-- [ ] T005 [P] [US1] Unit test for proportional margin math in `tests/data/test_math.py`
+- [X] T004 [P] [US1] Integration test for parsing raw odds text in `tests/data/test_ingestion.py`
+- [X] T005 [P] [US1] Unit test for proportional margin math in `tests/data/test_math.py`
 
 ### Implementation for User Story 1
 
-- [ ] T006 [P] [US1] Implement proportional margin removal logic in `src/data/math_utils.py`
-- [ ] T007 [US1] Implement multi-line text parsing logic to extract odds in `src/data/parser.py`
-- [ ] T008 [US1] Integrate parser with math utils to generate match consensus in `src/data/parser.py`
+- [X] T006 [P] [US1] Implement proportional margin removal logic in `src/data/math_utils.py`
+- [X] T007 [US1] Implement multi-line text parsing logic to extract odds in `src/data/parser.py`
+- [X] T008 [US1] Integrate parser with math utils to generate match consensus in `src/data/parser.py`
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
@@ -57,13 +57,13 @@
 
 ### Tests for User Story 2
 
-- [ ] T009 [P] [US2] Integration test for saving and retrieving match data in `tests/data/test_database.py`
+- [X] T009 [P] [US2] Integration test for saving and retrieving match data in `tests/data/test_database.py`
 
 ### Implementation for User Story 2
 
-- [ ] T010 [P] [US2] Define internal Python data models for MatchRecord and MatchOdds in `src/data/models.py`
-- [ ] T011 [US2] Implement insert and update logic for `matches` and `match_odds` tables in `src/data/database.py`
-- [ ] T012 [US2] Implement query functions to retrieve saved matches in `src/data/database.py`
+- [X] T010 [P] [US2] Define internal Python data models for MatchRecord and MatchOdds in `src/data/models.py`
+- [X] T011 [US2] Implement insert and update logic for `matches` and `match_odds` tables in `src/data/database.py`
+- [X] T012 [US2] Implement query functions to retrieve saved matches in `src/data/database.py`
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should both work independently
 
@@ -73,8 +73,8 @@
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] T013 Create an executable example script `run_quickstart.py` in project root based on `quickstart.md`
-- [ ] T014 Run `run_quickstart.py` to validate end-to-end integration
+- [X] T013 Create an executable example script `run_quickstart.py` in project root based on `quickstart.md`
+- [X] T014 Run `run_quickstart.py` to validate end-to-end integration
 
 ---
 
