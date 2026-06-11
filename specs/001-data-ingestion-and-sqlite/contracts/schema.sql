@@ -9,6 +9,8 @@ CREATE TABLE IF NOT EXISTS matches (
     consensus_p_home REAL NOT NULL,
     consensus_p_draw REAL NOT NULL,
     consensus_p_away REAL NOT NULL,
+    home_goals INTEGER, -- Actual home goals (null for upcoming matches)
+    away_goals INTEGER, -- Actual away goals (null for upcoming matches)
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     UNIQUE(home_team, away_team, match_date)
 );
@@ -25,4 +27,18 @@ CREATE TABLE IF NOT EXISTS match_odds (
     p_true_away REAL NOT NULL,
     FOREIGN KEY(match_id) REFERENCES matches(id) ON DELETE CASCADE,
     UNIQUE(match_id, bookmaker_name)
+);
+
+CREATE TABLE IF NOT EXISTS team_parameters (
+    team_id TEXT PRIMARY KEY,
+    alpha REAL NOT NULL,
+    beta REAL NOT NULL,
+    last_updated DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS model_config (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    gamma REAL NOT NULL,
+    rho REAL NOT NULL,
+    last_updated DATETIME DEFAULT CURRENT_TIMESTAMP
 );

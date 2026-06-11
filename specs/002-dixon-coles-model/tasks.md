@@ -10,8 +10,8 @@
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Create `ScoreMatrix` and `TeamParameters` dataclasses in `src/model/contracts.py`
-- [ ] T002 [P] Update database schema with `TeamParameters` and `ModelConfig` tables in `contracts/schema.sql`
+- [x] T001 Create `ScoreMatrix` and `TeamParameters` dataclasses in `src/model/contracts.py`
+- [x] T002 [P] Update database schema with `TeamParameters` and `ModelConfig` tables in `contracts/schema.sql`
 
 ---
 
@@ -19,7 +19,7 @@
 
 **Purpose**: Core infrastructure that MUST be complete before ANY user story can be implemented
 
-- [ ] T003 Implement database repository for parameters in `src/model/parameters.py`
+- [x] T003 Implement database repository for TeamParameters and ModelConfig in `src/model/parameters.py`
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -33,13 +33,13 @@
 
 ### Tests for User Story 1
 
-- [ ] T004 [US1] Write test for parameter fitting and exponential decay in `tests/model/test_dixon_coles.py`
+- [x] T004 [US1] Write test for parameter fitting and exponential decay in `tests/model/test_dixon_coles.py`
 
 ### Implementation for User Story 1
 
-- [ ] T005 [US1] Implement Dixon-Coles MLE optimization logic with tau adjustment in `src/model/dixon_coles.py`
-- [ ] T006 [US1] Add convergence failure retry logic with relaxed tolerances in `src/model/dixon_coles.py`
-- [ ] T007 [US1] Implement CLI for running the fitting process in `src/model/dixon_coles.py`
+- [x] T005 [US1] Implement Dixon-Coles MLE optimization logic with tau adjustment, using ModelConfig for global parameters, in `src/model/dixon_coles.py`
+- [x] T006 [US1] Add convergence failure retry logic with relaxed tolerances in `src/model/dixon_coles.py`
+- [x] T007 [US1] Implement CLI for running the fitting process in `src/model/dixon_coles.py`
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
@@ -53,12 +53,12 @@
 
 ### Tests for User Story 2
 
-- [ ] T008 [US2] Write test verifying 6x6 matrix generation sums to 1.0 in `tests/model/test_matrix.py`
+- [x] T008 [US2] Write test verifying 6x6 matrix generation sums to 1.0 in `tests/model/test_matrix.py`
 
 ### Implementation for User Story 2
 
-- [ ] T009 [US2] Implement 6x6 probability matrix calculation logic in `src/model/matrix.py`
-- [ ] T010 [US2] Implement CLI for predicting a specific matchup in `src/model/matrix.py`
+- [x] T009 [US2] Implement 6x6 probability matrix calculation logic, integrating Phase 1 bookmaker consensus prior, in `src/model/matrix.py`
+- [x] T010 [US2] Implement CLI for predicting a specific matchup in `src/model/matrix.py`
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should both work independently
 
@@ -68,8 +68,8 @@
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] T011 Run quickstart.md validation by testing the new CLI commands
-- [ ] T012 Code cleanup and refactoring across the `src/model` module
+- [x] T011 Run quickstart.md validation by testing the new CLI commands
+- [x] T012 Code cleanup and refactoring across the `src/model` module
 
 ---
 

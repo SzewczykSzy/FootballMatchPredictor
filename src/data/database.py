@@ -69,14 +69,14 @@ def save_match(conn: sqlite3.Connection, match: MatchRecord) -> int:
     row = cursor.fetchone()
     if row:
         match_id = row[0]
-        # Update existing match consensus
+        # Update existing match consensus and goals
         cursor.execute(
             """
             UPDATE matches 
-            SET consensus_p_home = ?, consensus_p_draw = ?, consensus_p_away = ?
+            SET consensus_p_home = ?, consensus_p_draw = ?, consensus_p_away = ?, home_goals = ?, away_goals = ?
             WHERE id = ?
             """,
-            (match.consensus_p_home, match.consensus_p_draw, match.consensus_p_away, match_id)
+            (match.consensus_p_home, match.consensus_p_draw, match.consensus_p_away, match.home_goals, match.away_goals, match_id)
         )
         
         # Delete old odds
@@ -85,11 +85,11 @@ def save_match(conn: sqlite3.Connection, match: MatchRecord) -> int:
         # Insert new match
         cursor.execute(
             """
-            INSERT INTO matches (home_team, away_team, match_date, consensus_p_home, consensus_p_draw, consensus_p_away)
-            VALUES (?, ?, ?, ?, ?, ?)
+            INSERT INTO matches (home_team, away_team, match_date, consensus_p_home, consensus_p_draw, consensus_p_away, home_goals, away_goals)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (match.home_team, match.away_team, match.match_date, 
-             match.consensus_p_home, match.consensus_p_draw, match.consensus_p_away)
+             match.consensus_p_home, match.consensus_p_draw, match.consensus_p_away, match.home_goals, match.away_goals)
         )
         match_id = cursor.lastrowid
         
@@ -111,7 +111,7 @@ def get_match(conn: sqlite3.Connection, match_id: int) -> Optional[MatchRecord]:
     """
     cursor = conn.cursor()
     cursor.execute(
-        "SELECT id, home_team, away_team, match_date, consensus_p_home, consensus_p_draw, consensus_p_away, created_at FROM matches WHERE id = ?",
+        "SELECT id, home_team, away_team, match_date, consensus_p_home, consensus_p_draw, consensus_p_away, home_goals, away_goals, created_at FROM matches WHERE id = ?",
         (match_id,)
     )
     m_row = cursor.fetchone()
@@ -147,6 +147,8 @@ def get_match(conn: sqlite3.Connection, match_id: int) -> Optional[MatchRecord]:
         consensus_p_home=m_row["consensus_p_home"],
         consensus_p_draw=m_row["consensus_p_draw"],
         consensus_p_away=m_row["consensus_p_away"],
+        home_goals=m_row["home_goals"],
+        away_goals=m_row["away_goals"],
         created_at=m_row["created_at"],
         odds=odds_list
     )

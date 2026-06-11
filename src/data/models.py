@@ -21,6 +21,8 @@ class MatchRecord:
     consensus_p_draw: float
     consensus_p_away: float
     match_date: Optional[str] = None
+    home_goals: Optional[int] = None
+    away_goals: Optional[int] = None
     created_at: Optional[str] = None
     id: Optional[int] = None
     odds: List[MatchOdds] = field(default_factory=list)
